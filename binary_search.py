@@ -1,17 +1,16 @@
-def binary_search(item_list,item):
-	first = 0
-	last = len(item_list)-1
-	found = False
-	while( first<=last and not found):
-		mid = (first + last)//2
-		if item_list[mid] == item :
-			found = True
-		else:
-			if item < item_list[mid]:
-				last = mid - 1
-			else:
-				first = mid + 1	
-	return found
-	
-print(binary_search([1,2,3,5,8], 6))
-print(binary_search([1,2,3,5,8], 5))
+def binary_search(array, num):
+    low = 0
+    high = len(array) - 1
+    found = False
+    while(low <= high and not found):
+        mid = (low + high)//2
+        if num == array[mid]:
+            found = True
+        else:
+            if num > array[mid]:
+                low = mid + 1
+            else:
+                high = mid - 1
+    return found
+
+print(binary_search([2, 4, 5, 8, 13, 15], 13))
