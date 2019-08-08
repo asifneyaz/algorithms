@@ -1,18 +1,18 @@
-def smallest_element(array):
-    smallest = array[0]
+def smallest_element(array_input):
+    smallest = array_input[0]
     smallest_index = 0
-    for i in range(1,len(array) - 1):
-        if array[i] < smallest:
-            smallest = array[i]
+    for i in range(len(array_input)):
+        if array_input[i] < smallest:
+            smallest = array_input[i]
             smallest_index = i
     return smallest_index
 
-def selection_sort(array):
-    sort_array = []
-    for j in range (0, len(array)):
-        smallest = smallest_element(array)
-        sort_array.append(array.pop(smallest))
-    return sort_array
+def selection_sort(array_input):
+    new_array = []
+    for i in range(len(array_input)):
+        smallest = smallest_element(array_input)
+        new_array.append(array_input.pop(smallest))
+    return new_array
 
-print(selection_sort([5, 1, 2, 9]))
-            
+#print(smallest_element([5, 0, 4, 9, 7, 10, 1, 3]))
+print(selection_sort([5, 0, 4, 9, 7, 10, 1, 3]))
